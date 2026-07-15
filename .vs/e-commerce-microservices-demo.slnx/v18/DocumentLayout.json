@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Shalom\\Desktop\\Datalinks Internship Program\\Software Development\\Backend\\DotNET-C#\\e-commerce-microservices-demo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F7C2F592-6101-40C8-BDA4-31CD6B518D8F}|e-commerce.sharedlibrary\\e-commerce.sharedlibrary.csproj|c:\\users\\shalom\\desktop\\datalinks internship program\\software development\\backend\\dotnet-c#\\e-commerce-microservices-demo\\e-commerce.sharedlibrary\\middleware\\globalexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C2F592-6101-40C8-BDA4-31CD6B518D8F}|e-commerce.sharedlibrary\\e-commerce.sharedlibrary.csproj|solutionrelative:e-commerce.sharedlibrary\\middleware\\globalexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F7C2F592-6101-40C8-BDA4-31CD6B518D8F}|e-commerce.sharedlibrary\\e-commerce.sharedlibrary.csproj|c:\\users\\shalom\\desktop\\datalinks internship program\\software development\\backend\\dotnet-c#\\e-commerce-microservices-demo\\e-commerce.sharedlibrary\\interface\\igenericinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F7C2F592-6101-40C8-BDA4-31CD6B518D8F}|e-commerce.sharedlibrary\\e-commerce.sharedlibrary.csproj|solutionrelative:e-commerce.sharedlibrary\\interface\\igenericinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GlobalException.cs",
+              "DocumentMoniker": "C:\\Users\\Shalom\\Desktop\\Datalinks Internship Program\\Software Development\\Backend\\DotNET-C#\\e-commerce-microservices-demo\\e-commerce.sharedlibrary\\Middleware\\GlobalException.cs",
+              "RelativeDocumentMoniker": "e-commerce.sharedlibrary\\Middleware\\GlobalException.cs",
+              "ToolTip": "C:\\Users\\Shalom\\Desktop\\Datalinks Internship Program\\Software Development\\Backend\\DotNET-C#\\e-commerce-microservices-demo\\e-commerce.sharedlibrary\\Middleware\\GlobalException.cs",
+              "RelativeToolTip": "e-commerce.sharedlibrary\\Middleware\\GlobalException.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T13:12:42.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "IGenericInterface.cs",
               "DocumentMoniker": "C:\\Users\\Shalom\\Desktop\\Datalinks Internship Program\\Software Development\\Backend\\DotNET-C#\\e-commerce-microservices-demo\\e-commerce.sharedlibrary\\Interface\\IGenericInterface.cs",
               "RelativeDocumentMoniker": "e-commerce.sharedlibrary\\Interface\\IGenericInterface.cs",
@@ -43,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "LogException.cs",
               "DocumentMoniker": "C:\\Users\\Shalom\\Desktop\\Datalinks Internship Program\\Software Development\\Backend\\DotNET-C#\\e-commerce-microservices-demo\\e-commerce.sharedlibrary\\Logs\\LogException.cs",
               "RelativeDocumentMoniker": "e-commerce.sharedlibrary\\Logs\\LogException.cs",
@@ -56,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Response.cs",
               "DocumentMoniker": "C:\\Users\\Shalom\\Desktop\\Datalinks Internship Program\\Software Development\\Backend\\DotNET-C#\\e-commerce-microservices-demo\\e-commerce.sharedlibrary\\Responses\\Response.cs",
               "RelativeDocumentMoniker": "e-commerce.sharedlibrary\\Responses\\Response.cs",
