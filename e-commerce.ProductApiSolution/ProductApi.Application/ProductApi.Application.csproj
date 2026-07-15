@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\e-commerce-microservices-demo\e-commerce.sharedlibrary\e-commerce.SharedLibrary.csproj" />
+    <ProjectReference Include="..\..\e-commerce.sharedlibrary\e-commerce.SharedLibrary.csproj" />
     <ProjectReference Include="..\ProductApi.Domain\ProductApi.Domain.csproj" />
   </ItemGroup>
 

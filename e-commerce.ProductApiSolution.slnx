@@ -1,7 +1,7 @@
 <Solution>
-  <Project Path="../e-commerce-microservices-demo/e-commerce.sharedlibrary/e-commerce.SharedLibrary.csproj" />
-  <Project Path="ProductApi.Application/ProductApi.Application.csproj" />
-  <Project Path="ProductApi.Domain/ProductApi.Domain.csproj" />
-  <Project Path="ProductApi.Infrastructure/ProductApi.Infrastructure.csproj" />
-  <Project Path="ProductApi.Presentation/ProductApi.Presentation.csproj" />
+  <Project Path="e-commerce.ProductApiSolution/ProductApi.Application/ProductApi.Application.csproj" />
+  <Project Path="e-commerce.ProductApiSolution/ProductApi.Domain/ProductApi.Domain.csproj" />
+  <Project Path="e-commerce.ProductApiSolution/ProductApi.Presentation/ProductApi.Presentation.csproj" />
+  <Project Path="e-commerce.sharedlibrary/e-commerce.SharedLibrary.csproj" />
+  <Project Path="ProductApi.Infrastructure/ProductApi.Infrastructure.csproj" Id="3a868dd8-147a-43d9-8801-f16e359db4a5" />
 </Solution>
