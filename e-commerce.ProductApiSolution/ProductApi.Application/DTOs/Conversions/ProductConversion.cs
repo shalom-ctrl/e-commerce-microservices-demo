@@ -17,29 +17,31 @@ namespace ProductApi.Application.DTOs.Conversions
             Price = product.Price
         };
 
-        public static (ProductDTO?, IEnumerable<ProductDTO>?) FromEntity(Product product, IEnumerable<Product>? products)
+        public static (ProductDTO?, IEnumerable<ProductDTO>?) FromEntity(Product? product, IEnumerable<Product>? products)
         {
-            if(product is null || products is null)
+            // Case 1: Mapping a single product (product is NOT null, products is null)
+            if (product is not null && products is null)
             {
                 var singleProduct = new ProductDTO(
-                    product!.Id,
+                    product.Id,
                     product.Name!,
                     product.Quantity,
                     product.Price
-                    );
+                );
 
                 return (singleProduct, null);
             }
 
-            if(product is not null || product is null)
+            // Case 2: Mapping multiple products (product is null, products is NOT null)
+            if (product is null && products is not null)
             {
                 var _products = products.Select(P =>
-                    new ProductDTO(P.Id, P.Name, P.Quantity, P.Price )).ToList();
+                    new ProductDTO(P.Id, P.Name!, P.Quantity, P.Price)).ToList();
 
                 return (null, _products);
             }
 
-            return(null, null);
+            return (null, null);
         }
     }
 }
