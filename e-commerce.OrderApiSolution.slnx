@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/e-commerce.OrderApiSolution/">
+    <Project Path="e-commerce.OrderApiSolution/OrderApi.Application/OrderApi.Application.csproj" />
+    <Project Path="e-commerce.OrderApiSolution/OrderApi.Domain/OrderApi.Domain.csproj" />
+    <Project Path="e-commerce.OrderApiSolution/OrderApi.Infrastructure/OrderApi.Infrastructure.csproj" />
+    <Project Path="e-commerce.OrderApiSolution/OrderApi.Presentation/OrderApi.Presentation.csproj" />
+  </Folder>
+</Solution>
