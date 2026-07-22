@@ -20,27 +20,29 @@ namespace OrderApi.Application.DTOs.Extensions
 
         public static (OrderDTO?, IEnumerable<OrderDTO>?) FromEntity(Order? order, IEnumerable<Order>? orders)
         {
-            if(order is not null || orders is null)
+            if (order is not null)
             {
-                var singleOrder = new OrderDTO(order!.Id,
+                var singleOrder = new OrderDTO(
+                    order.Id,
                     order.ClientId,
-                    order.ProductId, 
+                    order.ProductId,
                     order.PurchaseQuantity,
                     order.OrderedDate);
 
                 return (singleOrder, null);
             }
 
-           if(order is not null || orders is null)
+            if (orders is not null)
             {
-                var _orders = orders!.Select(o =>
-                new OrderDTO(o.Id,
-                o.ClientId,
-                o.ProductId,
-                o.PurchaseQuantity,
-                o.OrderedDate));
+                var orderList = orders.Select(o =>
+                    new OrderDTO(
+                        o.Id,
+                        o.ClientId,
+                        o.ProductId,
+                        o.PurchaseQuantity,
+                        o.OrderedDate));
 
-                return (null, _orders);
+                return (null, orderList);
             }
 
             return (null, null);

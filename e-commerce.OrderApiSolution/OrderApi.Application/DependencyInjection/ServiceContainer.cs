@@ -1,6 +1,7 @@
 ﻿using e_commerce.sharedlibrary.Logs;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OrderApi.Application.Interfaces;
 using OrderApi.Application.Services;
 using Polly;
 using Polly.Retry;
@@ -18,7 +19,7 @@ namespace OrderApi.Application.DependencyInjection
         {
             services.AddHttpClient<IOrderService, OrderService>(options =>
             {
-                options.BaseAddress = new Uri(configuration["ApiGateway:GaseAddress"]!);
+                options.BaseAddress = new Uri(configuration["ApiGateway:BaseAddress"]!);
                 options.Timeout = TimeSpan.FromSeconds(1);
             });
 

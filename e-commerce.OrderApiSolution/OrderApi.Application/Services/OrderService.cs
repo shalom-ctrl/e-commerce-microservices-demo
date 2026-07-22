@@ -72,7 +72,7 @@ namespace OrderApi.Application.Services
            var orders = await orderinterface.GetAllOrdersAsync(o => o.ClientId == clientId);
             if (!orders.Any())
             {
-                return null!;
+                return Enumerable.Empty<OrderDTO>();
             }
 
             var (_, _orders) = OrderConversion.FromEntity(null, orders);
