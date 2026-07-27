@@ -12,6 +12,6 @@ namespace Authentication.Application.Interfaces
     {
         Task<Response> Register(AppUserDTO appUserDTO);
         Task<Response> Login(LoginDTO loginDTO);
-        Task<AppUserDTO> GetUser(int userId);
+        Task<GetUserDTO> GetUser(int userId);
     }
 }
