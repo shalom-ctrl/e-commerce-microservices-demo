@@ -1,9 +1,0 @@
-<Solution>
-  <Folder Name="/e-commerce.ProductApiSolution/">
-    <Project Path="e-commerce.ProductApiSolution/ProductApi.Infrastructure/ProductApi.Infrastructure.csproj" />
-  </Folder>
-  <Project Path="e-commerce.ProductApiSolution/ProductApi.Application/ProductApi.Application.csproj" />
-  <Project Path="e-commerce.ProductApiSolution/ProductApi.Domain/ProductApi.Domain.csproj" />
-  <Project Path="e-commerce.ProductApiSolution/ProductApi.Presentation/ProductApi.Presentation.csproj" />
-  <Project Path="e-commerce.sharedlibrary/e-commerce.SharedLibrary.csproj" />
-</Solution>
