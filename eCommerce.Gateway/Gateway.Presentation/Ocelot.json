@@ -87,7 +87,7 @@
       "UpstreamPathTemplate": "/api/orders",
       "UpstreamHttpMethod": [ "GET" ],
       "FileCacheOptions": {
-        "TtlSeconds": 60,
+        "TtlSeconds": 20,
         "Region": "default",
         "Header": "eCommerce-Caching-Control"
       },
