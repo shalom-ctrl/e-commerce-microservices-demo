@@ -1,34 +1,29 @@
+using e_commerce.sharedlibrary.DependencyInjection;
+using Gateway.Presentation.MiddleWare;
+using Microsoft.AspNetCore.Authentication;
+using Ocelot.Cache.CacheManager;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-
-app.UseHttpsRedirection();
-
-var summaries = new[]
+builder.Configuration.AddJsonFile("Ocelot.json", optional: false, reloadOnChange: true);
+builder.Services.AddOcelot().AddCacheManager(x=>x.WithDictionaryHandle());
+JWTAuthenticationScheme.AddJWTAuthenticationScheme(builder.Services, builder.Configuration);
+builder.Services.AddCors(options =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowAnyOrigin();
+    });
 });
 
+// Configure the HTTP request pipeline.
+var app = builder.Build();
+app.UseHttpsRedirection();
+app.UseCors();
+app.UseMiddleware<AttachSignatureToRequest>();
+app.UseOcelot().Wait();
 app.Run();
-
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

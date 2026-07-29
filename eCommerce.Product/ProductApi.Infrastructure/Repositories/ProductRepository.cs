@@ -109,7 +109,7 @@ namespace ProductApi.Infrastructure.Repositories
         {
             try
             {
-                var product = await _context.Products.Where(predicate).FirstOrDefaultAsync()!;
+                var product = await _context.Products.FirstOrDefaultAsync(predicate);
                 return product is not null ? product : null!;
             }
             catch (Exception ex)

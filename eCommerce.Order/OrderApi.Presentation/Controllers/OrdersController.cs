@@ -1,4 +1,5 @@
 ﻿using e_commerce.sharedlibrary.Responses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OrderApi.Application.DTOs;
@@ -11,6 +12,7 @@ namespace OrderApi.Presentation.Controllers
     [Route("api/[controller]")]
 
     [ApiController]
+    [Authorize]
 
     public class OrdersController(IOrder orderinterface, IOrderService orderService) : ControllerBase
 
@@ -19,6 +21,7 @@ namespace OrderApi.Presentation.Controllers
 
         public async Task<ActionResult<IEnumerable<OrderDTO>>> GetAllOrders()
         {
+            await Task.Delay(4000);
             var orders = await orderinterface.GetAllAsync();
             if (!orders.Any())
             {

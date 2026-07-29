@@ -28,7 +28,7 @@ namespace OrderApi.Application.Services
 
         public async Task<AppUserDTO> GetUser(int userId)
         {
-            var user = await httpClient.GetAsync($"https://localhost:7032/api/Authentication/{userId}");
+            var user = await httpClient.GetAsync($"/api/authentication/{userId}");
             if(!user.IsSuccessStatusCode)
             {
                 return null!;
@@ -60,6 +60,11 @@ namespace OrderApi.Application.Services
             //    "User"
             //);
 
+            if (productdto is null || appuserdto is null)
+            {
+                return null!;
+            }
+
             return new OrderDetailsDTO(
                 order.Id,
                 productdto.Id,
@@ -71,7 +76,7 @@ namespace OrderApi.Application.Services
                 productdto.Name,
                 order.PurchaseQuantity,
                 productdto.Price,
-                productdto.Quantity * order.PurchaseQuantity,
+                productdto.Price * order.PurchaseQuantity,
                 order.OrderedDate
                 );
         }

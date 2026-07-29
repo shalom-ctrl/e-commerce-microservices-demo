@@ -24,7 +24,7 @@ namespace OrderApi.Infrastructure.DependencyInjection
             return services;
         } 
 
-        public static IApplicationBuilder UserInfrastructurePolicy(this IApplicationBuilder app)
+        public static IApplicationBuilder UseInfrastructurePolicy(this IApplicationBuilder app)
         {
             SharedServiceContainer.UseSharedPolicies(app);
 

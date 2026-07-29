@@ -64,12 +64,12 @@ namespace Authentication.Infrastructure.Repositories
                 new(ClaimTypes.Email, user.Email!)
             };
 
-            if(!string.IsNullOrEmpty(user.Role) || !Equals("string", user.Role))
+            if(!string.IsNullOrEmpty(user.Role) && !user.Role.Equals("string", StringComparison.OrdinalIgnoreCase))
                 claims.Add(new(ClaimTypes.Role, user.Role));
 
             var token = new JwtSecurityToken(
-                issuer: configuration["Authentication: Issuer"],
-                audience: configuration["Authentication: Audience"],
+                issuer: configuration["Authentication:Issuer"],
+                audience: configuration["Authentication:Audience"],
                 claims: claims,
                 expires: null,
                 signingCredentials: credentials

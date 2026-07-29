@@ -1,4 +1,5 @@
 ﻿using e_commerce.sharedlibrary.Responses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProductApi.Application.DTOs;
@@ -9,6 +10,7 @@ namespace ProductApi.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class ProductsController : ControllerBase
     {
         private readonly IProductRepository _productRepository;
@@ -28,7 +30,7 @@ namespace ProductApi.Presentation.Controllers
             }
 
             var(_, list) = ProductConversion.FromEntity(null!, products);
-            return list.Any() ? Ok(list) : NotFound("No product found");
+            return (list is not null && list.Any()) ? Ok(list) : NotFound("No product found");
         }
 
         [HttpGet("{id:int}")]
@@ -45,6 +47,7 @@ namespace ProductApi.Presentation.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         public async Task<ActionResult<Response>> CreateProduct(ProductDTO product)
         {
             if (!ModelState.IsValid)
@@ -58,6 +61,7 @@ namespace ProductApi.Presentation.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<Response>> UpdateProduct(ProductDTO product)
         {
             if (!ModelState.IsValid)
@@ -71,6 +75,7 @@ namespace ProductApi.Presentation.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<Response>> DeleteProduct(int id)
         {
             var productEntity = await _productRepository.FindByIdAsync(id);

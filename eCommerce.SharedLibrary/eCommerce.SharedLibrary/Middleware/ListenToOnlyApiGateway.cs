@@ -6,6 +6,12 @@ namespace e_commerce.sharedlibrary.Middleware
     {
         public async Task InvokeAsync(HttpContext context)
         {
+            if (context.Request.Path.StartsWithSegments("/swagger"))
+            {
+                await next(context);
+                return;
+            }
+
             var signedHeader = context.Request.Headers["Api-Gateway"];
             if(signedHeader.FirstOrDefault() is null)
             {
@@ -13,10 +19,8 @@ namespace e_commerce.sharedlibrary.Middleware
                 await context.Response.WriteAsync("Sorry, service is unavailable");
                 return;
             }
-            else
-            {
                 await next(context);
-            }
+
         }
     }
 }

@@ -1,1 +1,4 @@
-<Solution />
+<Solution>
+  <Project Path="../eCommerce.SharedLibrary/eCommerce.SharedLibrary/eCommerce.SharedLibrary.csproj" />
+  <Project Path="Gateway.Presentation/Gateway.Presentation.csproj" />
+</Solution>
