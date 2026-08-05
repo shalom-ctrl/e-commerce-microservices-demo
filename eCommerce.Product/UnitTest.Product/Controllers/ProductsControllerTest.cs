@@ -70,7 +70,7 @@ namespace UnitTest.Product.Controllers
             notFoundResult!.StatusCode.Should().Be(StatusCodes.Status404NotFound);
 
             var message = notFoundResult.Value as string;
-            message.Should().Be("No product detected in the database");
+            message.Should().Be("No Products detected in the Database");
 
         }
 
@@ -93,10 +93,8 @@ namespace UnitTest.Product.Controllers
         }
 
         [Fact]
-
         public async Task CreateProduct_WhenCreateIsSuccessful_ReturnOkResponse()
         {
-
             //Arange 
             var productDTO = new ProductDTO(1, "Product 1", 34, 67.95m);
             var response = new Response(true, "Created");
