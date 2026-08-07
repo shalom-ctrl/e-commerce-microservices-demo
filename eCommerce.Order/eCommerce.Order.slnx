@@ -1,7 +1,12 @@
 <Solution>
-  <Project Path="../eCommerce.SharedLibrary/eCommerce.SharedLibrary/eCommerce.SharedLibrary.csproj" />
-  <Project Path="OrderApi.Application/OrderApi.Application.csproj" />
-  <Project Path="OrderApi.Domain/OrderApi.Domain.csproj" />
-  <Project Path="OrderApi.Infrastructure/OrderApi.Infrastructure.csproj" />
-  <Project Path="OrderApi.Presentation/OrderApi.Presentation.csproj" />
+  <Folder Name="/src/">
+    <Project Path="../eCommerce.SharedLibrary/eCommerce.SharedLibrary/eCommerce.SharedLibrary.csproj" />
+    <Project Path="OrderApi.Application/OrderApi.Application.csproj" />
+    <Project Path="OrderApi.Domain/OrderApi.Domain.csproj" />
+    <Project Path="OrderApi.Infrastructure/OrderApi.Infrastructure.csproj" />
+    <Project Path="OrderApi.Presentation/OrderApi.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="UnitTest.Order/UnitTest.Order.csproj" Id="e70d12fc-1cc0-4433-bd7f-afe22164bcc4" />
+  </Folder>
 </Solution>
